@@ -1,0 +1,583 @@
+/* 
+   Logistics Website - Main Stylesheet
+   A professional, modern design for a logistics company
+*/
+
+/* ===== CSS CUSTOM PROPERTIES ===== */
+:root {
+   /* Primary brand colors - bold black & modern white contrast */
+    --primary-color: #000000;        /* Black from logo */
+    --primary-dark: #1A1A1A;         /* Slightly lighter than pure black */
+    --primary-light: #FFFFFF;        /* White from logo */
+
+    /* Secondary colors - subtle variations for UI harmony */
+    --secondary-color: #4C4C4C;      /* Deep gray for subtle accents */
+    --secondary-dark: #2B2B2B;       /* For hovered secondary elements */
+    --secondary-light: #A0A0A0;      /* Light gray for soft backgrounds */
+
+    /* Neutral colors - clean, minimal tones */
+    --dark: #181C14;                 /* Keep your original dark tone */
+    --light: #F5F5F5;                /* Brighter white-like background */
+    --gray: #3C3D37;                 /* Keep as-is for mid-gray */
+    --gray-light: #B0B0B0;           /* Softer light gray than original */
+
+    /* Status colors - keep standard for usability */
+    --success: #20c997;              /* Green: success messages */
+    --warning: #ffc107;              /* Yellow: warning messages */
+    --danger:  #dc3545;              /* Red: error/danger messages */
+    
+    /* Typography */
+    --font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --headings-font-weight: 700;
+    
+    /* Spacing */
+    --section-padding: 5rem 0;
+    --container-padding: 1rem;
+    
+    /* Transition speeds */
+    --transition-fast: 0.3s;
+    --transition-medium: 0.5s;
+    
+    /* Border radius */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    
+    /* Box shadows */
+    --shadow-sm: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    --shadow-md: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, .175);
+}
+
+/* ===== BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--headings-font-weight);
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-fast) ease;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+input:focus, textarea:focus, select:focus, button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+.section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    color: var(--secondary-dark);
+}
+
+.section-subheading {
+    color: var(--gray);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    transition: all var(--transition-fast) ease;
+}
+
+
+.btn:focus {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+}
+
+
+.btn:active {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important; 
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-primary:active {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-primary:focus {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn:focus-visible {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ===== UTILITIES ===== */
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-secondary { background-color: var(--secondary-color) !important; }
+
+/* ===== NAVIGATION ===== */
+.navbar {
+    padding: 1rem 0;
+    transition: all var(--transition-fast) ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.navbar-brand img {
+    transition: all var(--transition-fast) ease;
+}
+
+.navbar-scrolled {
+    padding: 0.5rem 0;
+    background-color: white !important;
+    box-shadow: var(--shadow-md);
+}
+
+.navbar-scrolled .navbar-brand img {
+    height: 40px;
+}
+
+.nav-link {
+    color: var(--dark);
+    font-weight: 500;
+    margin: 0 0.5rem;
+    padding: 0.5rem 0.75rem;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform var(--transition-fast) ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+    height: 100vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* Adjust for navbar */
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* ===== SERVICES SECTION ===== */
+.services-section {
+    padding: var(--section-padding);
+}
+
+.truck-bg {
+    background-image: url('../img/bg4.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 450px;
+    position: relative;
+    margin-bottom: -300px;
+    z-index: 0;
+}
+
+/* Section titles and descriptions */
+.section-title {
+    color: var(--primary-dark);
+    font-weight: bold;
+    font-size: 1.75rem; 
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.section-desc {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Dots */
+.dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-dark);
+    border: 4px solid #fff;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.dot-top {
+    top: 39%;
+    left: 53%;
+    transform: translateX(-50%);
+}
+
+.dot-middle {
+    top: 52%;
+    left: 47%;
+    transform: translateX(-50%);
+}
+
+.dot-bottom {
+    bottom: 25.5%;
+    left: 53%;
+    transform: translateX(-50%);
+}
+
+/* Horizontal lines connecting titles to dots */
+.line-horizontal {
+    position: absolute;
+    height: 2px;
+    background-color: var(--primary-dark);
+    z-index: 1;
+}
+
+/* Line from "Partial Loads" to dot-top */
+.line1-h {
+    width: 23%;
+    top: 40.5%;
+    left: 53%;
+}
+
+/* Line from "Dry Van" to dot-middle */
+.line2-h {
+    width: 47%;
+    top: 53.5%;
+    left: 0%;
+}
+
+/* Line from "Drop and Hook" to dot-bottom */
+.line3-h {
+    width: 30.5%;
+    top: 72.5%;
+    left: 53%;
+}
+
+/* ===========================
+   Responsive Styles for Mobile
+   =========================== */
+
+   @media (max-width: 1399px) {
+    .truck-bg,
+    .dot,
+    .line-horizontal {
+        display: none !important;
+    }
+
+    .services-section {
+        padding: 2rem 1rem;
+    }
+    .container.py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    .section-title {
+        font-size: 1.3rem;
+    }
+    .section-desc {
+        font-size: 0.95rem;
+    }
+    /* Stack columns vertically */
+    .row.text-md-start.align-items-center.position-relative {
+        flex-direction: column !important;
+    }
+    .col-md-4 {
+        max-width: 100%;
+        flex: 0 0 100%;
+        margin-bottom: 2rem;
+    }
+    .col-md-4:last-child {
+        margin-bottom: 0;
+    }
+    /* Remove the margin-bottom for .truck-bg */
+    .truck-bg {
+        margin-bottom: 0 !important;
+        height: 0 !important;
+    }
+    /* Hide the spacer column on mobile */
+    .col-md-4.mb-5.mb-md-0 ~ .col-md-4:not(:last-child) {
+        display: none !important;
+    }
+    /* Or, more generally, hide the "spacer" column if it has no content */
+    .col-md-4:empty {
+        display: none !important;
+    }
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-section {
+    padding: var(--section-padding);
+}
+
+.about-section img {
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+
+/* ===== WHY US SECTION ===== */
+
+.whyus-section {
+    padding: 4rem 0;
+}
+
+.whyus-card {
+    border: none;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-medium) ease;
+    padding: 2rem 1.5rem;
+}
+
+.whyus-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+}
+
+.whyus-icon {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.whyus-card .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-dark);
+}
+
+
+/* ===== STATS SECTION ===== */
+.stats-section {
+    background-color: var(--secondary-color);
+    padding: 4rem 0;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-text {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== QUOTE SECTION ===== */
+.quote-section {
+    padding: var(--section-padding);
+    background-color: white;
+}
+
+.quote-form {
+    padding: 2rem;
+    background-color: var(--light);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+    padding: var(--section-padding);
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form-wrapper {
+    border-radius: var(--border-radius-md);
+}
+
+.form-control, .form-select {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-light);
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-fast) ease;
+    outline: none !important;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    outline: 0px !important;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: var(--secondary-dark);
+    padding: 4rem 0 2rem;
+}
+
+.footer h5 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color var(--transition-fast) ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.social-icons a {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast) ease;
+    margin-right: 0.5rem;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 2.75rem;
+    }
+    
+    .section-heading {
+        font-size: 2rem;
+    }
+    
+    .navbar-collapse {
+        background-color: white;
+        padding: 1rem;
+        border-radius: var(--border-radius-sm);
+        box-shadow: var(--shadow-sm);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+        padding-top: 100px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.25rem;
+    }
+    
+    .service-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2.25rem;
+    }
+    
+    .footer {
+        text-align: center;
+    }
+    
+    .social-icons {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .section-heading {
+        font-size: 1.75rem;
+    }
+}
+
