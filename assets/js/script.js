@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initSmoothScrolling();
-    initFormHandling();  // <-- Updated to submit to Google Forms
+    initFormHandling();
     initAnimations();
     document.body.classList.add('loaded');
 });
@@ -30,23 +30,34 @@ function initNavbar() {
         });
     });
 
+    // Move this function outside if needed by other functions
     function updateActiveNavLink() {
-        const scrollPosition = window.scrollY;
+        const scrollPosition = window.scrollY + 100; // Adjust for navbar height
         const sections = document.querySelectorAll('section[id], header[id]');
-
+        
+        let currentActive = null;
+        
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 100;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
-
+            
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-                if (activeLink) activeLink.classList.add('active');
+                currentActive = sectionId;
             }
         });
+        
+        if (currentActive) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentActive}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
     }
 
+    // Initialize active state on page load
     updateActiveNavLink();
 }
 
@@ -59,13 +70,24 @@ function initSmoothScrolling() {
                 const targetElement = document.querySelector(targetId);
 
                 if (targetElement) {
-                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    // Get current navbar height for accurate scrolling
+                    const navbar = document.querySelector('.navbar');
+                    const navbarHeight = navbar.offsetHeight;
+                    
+                    // Calculate target position
                     const targetPosition = targetElement.offsetTop - navbarHeight;
 
+                    // Smooth scroll
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
                     });
+                    
+                    // Set active class immediately for better UX
+                    document.querySelectorAll('.nav-link').forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    this.classList.add('active');
                 }
             });
         }

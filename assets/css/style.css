@@ -154,34 +154,33 @@ img {
 
 /* ===== NAVIGATION ===== */
 .navbar {
-    /* padding: 1rem 0; */
     transition: all var(--transition-fast) ease;
     box-shadow: var(--shadow-sm);
-}
-
-.navbar-brand img {
+  }
+  
+  .navbar-brand img {
     transition: all var(--transition-fast) ease;
-}
-
-.navbar-scrolled {
+  }
+  
+  .navbar-scrolled {
     padding: 0.5rem 0;
     background-color: white !important;
     box-shadow: var(--shadow-md);
-}
-
-.navbar-scrolled .navbar-brand img {
+  }
+  
+  .navbar-scrolled .navbar-brand img {
     height: 40px;
-}
-
-.nav-link {
+  }
+  
+  .nav-link {
     color: var(--primary-color);
     font-weight: 500;
     margin: 0 0.5rem;
     padding: 0.5rem 0.75rem;
     position: relative;
-}
-
-.nav-link::after {
+  }
+  
+  .nav-link::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -191,17 +190,22 @@ img {
     background-color: var(--primary-color);
     transform: scaleX(0);
     transition: transform var(--transition-fast) ease;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
     transform: scaleX(1);
-}
-
-.nav-link:hover,
-.nav-link.active {
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
     color: var(--primary-color) !important;
-}
+  }
+  
+  /* ===== SECTION OFFSETS FOR SMOOTH SCROLLING ===== */
+  section[id], header[id] {
+    scroll-margin-top: 100px;
+  }
 
 /* ===== HERO SECTION ===== */
 .hero-section {
@@ -537,6 +541,9 @@ img {
         padding: 1rem;
         border-radius: var(--border-radius-sm);
         box-shadow: var(--shadow-sm);
+    }
+    .nav-link::after {
+        display: none !important;
     }
 }
 
