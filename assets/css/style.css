@@ -207,7 +207,7 @@ img {
 .hero-section {
     height: 100vh;
     min-height: 600px;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/bg1.jpg');
+    /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/bg1.jpg'); */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

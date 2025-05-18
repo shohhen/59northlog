@@ -49,20 +49,31 @@
     </nav>
 
     <!-- Hero Section -->
-    <header id="home" class="hero-section">
-        <div class="container h-100">
+    <header id="home" class="hero-section position-relative overflow-hidden">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
+            <source src="assets/img/promo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    
+        <!-- Overlay (optional, for better contrast) -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50 z-0"></div>
+    
+        <!-- Content -->
+        <div class="container h-100 position-relative z-1">
             <div class="row h-100 align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-6 text-white">
                     <h1 class="display-4 fw-bold">Reliable Logistics Solutions for Your Business</h1>
                     <p class="lead my-4">We provide efficient transportation and supply chain management services to optimize your business operations.</p>
                     <div class="d-flex flex-wrap gap-2">
                         <a href="#services" class="btn btn-primary btn-lg">Our Services</a>
-                        <a href="#contact" class="btn btn-outline-secondary btn-lg">Contact Us</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    
 
 
      <!-- About Us Section -->
