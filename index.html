@@ -13,14 +13,15 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Favicon -->
     <link rel="icon" type="ico" href="assets/img/logo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <img src="assets/img/logo.svg" alt="Logistics Logo" height="50" class="me-1">
-                <p class="mb-0 text-center">North Logistics LLC</p>
+                <img src="assets/img/logo.svg" alt="Logistics Logo" height="95" class="">
+                <!-- <h3 class="mb-0 text-center">59 North Logistics LLC</h3> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,7 +41,7 @@
                         <a class="nav-link" href="#whyus">Why Choose Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class=" btn btn-primary text-white ms-lg-3 px-4" href="#quote">Get a Quote</a>
+                        <a class=" btn btn-primary text-white ms-lg-3 px-4" href="#quote">Apply as Driver</a>
                     </li>
                 </ul>
             </div>
@@ -211,19 +212,19 @@
                 </div>
                 <div class="col-md-3 col-6 mb-4 mb-md-0">
                     <div class="stat-item">
-                        <h3 class="stat-number">250+</h3>
-                        <p class="stat-text">Happy Clients</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-item">
                         <h3 class="stat-number">50+</h3>
-                        <p class="stat-text">Countries Covered</p>
+                        <p class="stat-text">Happy Drivers</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="stat-item">
-                        <h3 class="stat-number">15+</h3>
+                        <h3 class="stat-number">48</h3>
+                        <p class="stat-text">States Covered</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <h3 class="stat-number">5+</h3>
                         <p class="stat-text">Years Experience</p>
                     </div>
                 </div>
@@ -242,25 +243,25 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <form class="quote-form">
+                    <form id="quote-form">
                         <div class="row g-3">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="Email Address" required>
-                            </div>
-                            <div class="col-12">
-                                <input type="tel" class="form-control" placeholder="Phone Number">
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control" rows="5" placeholder="Additional Details" required></textarea>
-                            </div>
-                            <div class="col-12 text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Submit Application</button>
-                            </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Your Name" name="entry.1861246649" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="email" class="form-control" placeholder="Email Address" name="entry.345879599" required>
+                          </div>
+                          <div class="col-12">
+                            <input type="tel" class="form-control" placeholder="Phone Number" name="entry.2092051339" required>
+                          </div>
+                          <div class="col-12">
+                            <textarea class="form-control" rows="5" placeholder="Additional Details" name="entry.261232045" required></textarea>
+                          </div>
+                          <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Submit Application</button>
+                          </div>
                         </div>
-                    </form>
+                      </form>
                 </div>
             </div>
         </div>
@@ -270,79 +271,51 @@
     <section id="contact" class="contact-section py-5 bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="col-lg-12 mb-4 mb-lg-0">
                     <h2 class="section-heading">Contact Us</h2>
                     <p class="mb-4">Have questions or need more information? We're here to help! Contact us using any of the methods below:</p>
-                    <div class="contact-info">
-                        <div class="d-flex mb-3">
-                            <div class="contact-icon me-3">
-                                <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-info d-flex justify-content-between">
+                        <div class="">
+                            <div class="d-flex mb-3">
+                                <div class="contact-icon me-3">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h5 class="m-0">Address</h5>
+                                    <p>8200 Beckett Park Drive Unit 208, West Chester, OH 45069</p>
+                                </div>
                             </div>
-                            <div>
-                                <h5 class="m-0">Address</h5>
-                                <p>8200 Beckett Park Drive Unit 208, West Chester, OH 45069</p>
+                            <div class="d-flex mb-3">
+                                <div class="contact-icon me-3">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h5 class="m-0">Phone</h5>
+                                    <p>+1 (800) 508-1008</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="contact-icon me-3">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5 class="m-0">Email</h5>
+                                    <p>dispatch@59northlog.com</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="contact-icon me-3">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h5 class="m-0">Working Hours</h5>
+                                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="d-flex mb-3">
-                            <div class="contact-icon me-3">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h5 class="m-0">Phone</h5>
-                                <p>+1 (800) 508-1008</p>
-                            </div>
+                        <div class="">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3085.140924667771!2d-84.46538502302508!3d39.353045171630434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88404f8a4f5e12fd%3A0x811e883636deae15!2s8200%20Beckett%20Park%20Dr%2C%20West%20Chester%20Township%2C%20OH%2045069%2C%20%D0%A1%D0%A8%D0%90!5e0!3m2!1sen!2s!4v1747579735753!5m2!1sen!2s" width="450" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-                        <div class="d-flex mb-3">
-                            <div class="contact-icon me-3">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h5 class="m-0">Email</h5>
-                                <p>dispatch@59northlog.com</p>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="contact-icon me-3">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h5 class="m-0">Working Hours</h5>
-                                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="contact-form-wrapper p-4 bg-white rounded shadow-sm">
-                        <h3 class="mb-4">Request a Quote</h3>
-                        <form id="quoteForm" class="contact-form">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
-                                </div>
-                                <div class="col-md-6">
-                                    <select class="form-select" id="service" name="service">
-                                        <option value="" selected disabled>Service Type</option>
-                                        <option value="Dry Van Freight">Dry Van Freight</option>
-                                        <option value="Power-Only Hauling">Power-Only Hauling</option>
-                                        <option value="OTR & Regional Coverage">OTR & Regional Coverage</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control" id="details" name="details" rows="5" placeholder="Additional Details" required></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                        <div id="formStatus" class="mt-3" style="display: none;"></div>
                     </div>
                 </div>
             </div>
@@ -356,7 +329,7 @@
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <div class="d-flex align-items-center mb-4">
                         <img src="assets/img/logo.svg" alt="Logistics Logo" height="50" class="bg-white rounded-circle me-2">
-                        <p class="mb-0">North Logistics LLC</p>
+                        <p class="mb-0">59 North Logistics LLC</p>
                     </div>
                     <p>We provide comprehensive logistics and transportation solutions to businesses of all sizes, ensuring efficient and reliable delivery of goods worldwide.</p>
                     <div class="social-icons">

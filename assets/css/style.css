@@ -5,30 +5,30 @@
 
 /* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
-   /* Primary brand colors - bold black & modern white contrast */
-    --primary-color: #000000;        /* Black from logo */
-    --primary-dark: #1A1A1A;         /* Slightly lighter than pure black */
-    --primary-light: #FFFFFF;        /* White from logo */
+   /* Primary brand colors - bold navy & clean contrast */
+  --primary-color: #0F2D45;        /* Deep navy from the "59" and "NORTH" text */
+  --primary-dark: #0C2234;         /* Darker navy for headers, buttons */
+  --primary-light: #EAEFF3;        /* Very light grayish blue for backgrounds */
 
-    /* Secondary colors - subtle variations for UI harmony */
-    --secondary-color: #4C4C4C;      /* Deep gray for subtle accents */
-    --secondary-dark: #2B2B2B;       /* For hovered secondary elements */
-    --secondary-light: #A0A0A0;      /* Light gray for soft backgrounds */
+  /* Accent colors - from the truck graphic */
+  --accent-color: #737E85;         /* Gray-blue tone from the truck */
+  --accent-light: #B7C1C6;         /* Light version for borders or hover effects */
 
-    /* Neutral colors - clean, minimal tones */
-    --dark: #181C14;                 /* Keep your original dark tone */
-    --light: #F5F5F5;                /* Brighter white-like background */
-    --gray: #3C3D37;                 /* Keep as-is for mid-gray */
-    --gray-light: #B0B0B0;           /* Softer light gray than original */
+  /* Neutral colors - supporting tones */
+  --dark: #1A1A1A;                 /* Near black for strong contrast text */
+  --light: #FFFFFF;                /* White for clean backgrounds */
+  --gray: #5E5E5E;                 /* Medium gray for muted text */
+  --gray-light: #C8C8C8;           /* Lighter gray for UI elements */
 
-    /* Status colors - keep standard for usability */
-    --success: #20c997;              /* Green: success messages */
-    --warning: #ffc107;              /* Yellow: warning messages */
-    --danger:  #dc3545;              /* Red: error/danger messages */
-    
-    /* Typography */
-    --font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --headings-font-weight: 700;
+  /* Status colors - standard usability cues */
+  --success: #20c997;
+  --warning: #ffc107;
+  --danger:  #dc3545;
+
+  /* Typography */
+  --font-family: "Roboto", sans-serif;
+  --headings-font-weight: 700;
+  --text-font-weight: 400;
     
     /* Spacing */
     --section-padding: 5rem 0;
@@ -58,7 +58,7 @@
 
 body {
     font-family: var(--font-family);
-    color: var(--dark);
+    color: var(--primary-dark);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -87,7 +87,7 @@ input:focus, textarea:focus, select:focus, button:focus {
     font-size: 2.5rem;
     margin-bottom: 0.75rem;
     position: relative;
-    color: var(--secondary-dark);
+    color: var(--primary-color);
 }
 
 .section-subheading {
@@ -148,13 +148,13 @@ img {
 
 /* ===== UTILITIES ===== */
 .text-primary { color: var(--primary-color) !important; }
-.text-secondary { color: var(--secondary-color) !important; }
+.text-secondary { color: var(--accent-color) !important; }
 .bg-primary { background-color: var(--primary-color) !important; }
-.bg-secondary { background-color: var(--secondary-color) !important; }
+.bg-secondary { background-color: var(--accent-color) !important; }
 
 /* ===== NAVIGATION ===== */
 .navbar {
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
     transition: all var(--transition-fast) ease;
     box-shadow: var(--shadow-sm);
 }
@@ -174,7 +174,7 @@ img {
 }
 
 .nav-link {
-    color: var(--dark);
+    color: var(--primary-color);
     font-weight: 500;
     margin: 0 0.5rem;
     padding: 0.5rem 0.75rem;
@@ -200,7 +200,7 @@ img {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
 }
 
 /* ===== HERO SECTION ===== */
@@ -406,13 +406,13 @@ img {
 .whyus-card .card-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--secondary-dark);
+    color: var(--accent-dark);
 }
 
 
 /* ===== STATS SECTION ===== */
 .stats-section {
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
     padding: 4rem 0;
 }
 
@@ -476,7 +476,7 @@ img {
 
 /* ===== FOOTER ===== */
 .footer {
-    background-color: var(--secondary-dark);
+    background-color: var(--accent-color);
     padding: 4rem 0 2rem;
 }
 
