@@ -480,6 +480,30 @@ img {
     box-shadow: var(--shadow-md);
 }
 
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+  }
+  
+  .btn-loading::after {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: calc(50% - 0.5rem);
+    left: calc(50% - 0.5rem);
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spinner 0.6s linear infinite;
+  }
+  
+  @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
 /* ===== CONTACT SECTION ===== */
 .contact-section {
     padding: var(--section-padding);

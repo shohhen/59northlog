@@ -100,8 +100,14 @@ function initFormHandling() {
     forms.forEach(form => {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-
+            
+            // Get the submit button
+            const submitButton = this.querySelector('button[type="submit"]');
+            
             if (validateForm(this)) {
+                // Set loading state
+                setButtonLoading(submitButton, true);
+                
                 const formData = new FormData();
 
                 // Map fields to Google Form entry IDs
@@ -118,12 +124,31 @@ function initFormHandling() {
                 }).then(() => {
                     showFormFeedback(form, 'Thank you! Your application has been submitted.', 'success');
                     form.reset();
+                    // Reset loading state
+                    setButtonLoading(submitButton, false);
                 }).catch(() => {
                     showFormFeedback(form, 'Oops! Something went wrong. Please try again later.', 'danger');
+                    // Reset loading state
+                    setButtonLoading(submitButton, false);
                 });
             }
         });
     });
+
+    // Function to toggle button loading state
+    function setButtonLoading(button, isLoading) {
+        if (isLoading) {
+            // Store the original button text and disable the button
+            button.dataset.originalText = button.textContent;
+            button.disabled = true;
+            button.classList.add('btn-loading');
+        } else {
+            // Restore the original button text and enable the button
+            button.textContent = button.dataset.originalText || 'Submit';
+            button.disabled = false;
+            button.classList.remove('btn-loading');
+        }
+    }
 
     function validateForm(form) {
         let isValid = true;
