@@ -159,6 +159,8 @@ img {
   }
   
   .navbar-brand img {
+    width: 120px; /* Original width */
+    height: auto; /* Auto height to maintain aspect ratio */
     transition: all var(--transition-fast) ease;
   }
   
@@ -169,7 +171,8 @@ img {
   }
   
   .navbar-scrolled .navbar-brand img {
-    height: 40px;
+    width: 100px;
+    height: auto;
   }
   
   .nav-link {
@@ -238,11 +241,11 @@ img {
 }
 
 .truck-bg {
-    background-image: url('../img/bg4.png');
+    background-image: url('../img/bg5.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    height: 450px;
+    height: 550px;
     position: relative;
     margin-bottom: -300px;
     z-index: 0;
@@ -275,19 +278,19 @@ img {
 }
 
 .dot-top {
-    top: 39%;
+    top: 50%;
     left: 53%;
     transform: translateX(-50%);
 }
 
 .dot-middle {
-    top: 52%;
+    top: 60%;
     left: 47%;
     transform: translateX(-50%);
 }
 
 .dot-bottom {
-    bottom: 25.5%;
+    bottom: 21%;
     left: 53%;
     transform: translateX(-50%);
 }
@@ -303,21 +306,21 @@ img {
 /* Line from "Partial Loads" to dot-top */
 .line1-h {
     width: 23%;
-    top: 40.5%;
+    top: 51.5%;
     left: 53%;
 }
 
 /* Line from "Dry Van" to dot-middle */
 .line2-h {
     width: 47%;
-    top: 53.5%;
+    top: 61.5%;
     left: 0%;
 }
 
 /* Line from "Drop and Hook" to dot-bottom */
 .line3-h {
     width: 30.5%;
-    top: 72.5%;
+    bottom: 22.5%;
     left: 53%;
 }
 
@@ -325,50 +328,78 @@ img {
    Responsive Styles for Mobile
    =========================== */
 
-   @media (max-width: 1399px) {
-    .truck-bg,
+@media (max-width: 1399px) {
+    /* Show truck on mobile but position it on the right */
     .dot,
     .line-horizontal {
         display: none !important;
     }
+    
+    /* Update truck styling for mobile */
+    .truck-bg {
+        display: block !important; /* Ensure it's visible */
+        height: 100% !important; /* Full height of the section */
+        position: absolute;
+        right: -48%; /* Negative right positioning to make it extend outside */
+        left: auto;
+        top: 80px;
+        width: 85%; /* Control width */
+        background-position: right center; /* Position image on the right */
+        margin-bottom: 0 !important;
+        z-index: 0;
+    }
 
     .services-section {
         padding: 2rem 1rem;
+        position: relative;
+        overflow: hidden;
     }
+    
     .container.py-5 {
         padding-top: 2rem !important;
         padding-bottom: 2rem !important;
     }
+    
     .section-title {
         font-size: 1.3rem;
     }
+    
     .section-desc {
         font-size: 0.95rem;
     }
+    
     /* Stack columns vertically */
     .row.text-md-start.align-items-center.position-relative {
         flex-direction: column !important;
     }
+    
     .col-md-4 {
         max-width: 100%;
         flex: 0 0 100%;
         margin-bottom: 2rem;
+        padding-right: 42%; /* Make room for the truck image */
     }
+    
     .col-md-4:last-child {
         margin-bottom: 0;
     }
-    /* Remove the margin-bottom for .truck-bg */
-    .truck-bg {
-        margin-bottom: 0 !important;
-        height: 0 !important;
-    }
+    
     /* Hide the spacer column on mobile */
-    .col-md-4.mb-5.mb-md-0 ~ .col-md-4:not(:last-child) {
-        display: none !important;
-    }
-    /* Or, more generally, hide the "spacer" column if it has no content */
     .col-md-4:empty {
         display: none !important;
+    }
+}
+
+
+/* Extra small screens */
+@media (max-width: 575px) {
+    .truck-bg {
+        right: -55%; /* Further negative positioning for smaller screens */
+        width: 100%; /* Wider for better visibility */
+    }
+    
+    .col-md-4 {
+        padding-right: 15%; /* Less room for truck on very small screens */
     }
 }
 
