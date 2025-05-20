@@ -340,9 +340,9 @@ img {
         display: block !important; /* Ensure it's visible */
         height: 100% !important; /* Full height of the section */
         position: absolute;
-        right: -48%; /* Negative right positioning to make it extend outside */
+        right: -32%; /* Negative right positioning to make it extend outside */
         left: auto;
-        top: 80px;
+        top: 50px;
         width: 85%; /* Control width */
         background-position: right center; /* Position image on the right */
         margin-bottom: 0 !important;
