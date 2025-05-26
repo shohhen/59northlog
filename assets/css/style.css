@@ -249,6 +249,7 @@ img {
     position: relative;
     margin-top: -275px;
     z-index: 0;
+    transform: rotate(180deg)
 }
 
 /* Section titles and descriptions */
