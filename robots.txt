@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://www.59northlog.com/sitemap.xml
