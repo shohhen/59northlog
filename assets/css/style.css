@@ -247,7 +247,7 @@ img {
     background-size: contain;
     height: 550px;
     position: relative;
-    margin-top: -275px;
+    margin-top: -300px;
     z-index: 0;
     transform: rotate(180deg)
 }
@@ -279,13 +279,13 @@ img {
 }
 
 .dot-top {
-    top: 9.5%;
+    top: 5.5%;
     left: 53%;
     transform: translateX(-50%);
 }
 
 .dot-middle {
-    top: 22.5%;
+    top: 20.5%;
     left: 47%;
     transform: translateX(-50%);
 }
@@ -307,14 +307,14 @@ img {
 /* Line from "Partial Loads" to dot-top */
 .line1-h {
     width: 23%;
-    top: 10.5%;
+    top: 6.5%;
     left: 53%;
 }
 
 /* Line from "Dry Van" to dot-middle */
 .line2-h {
     width: 47%;
-    top: 23.5%;
+    top: 21.5%;
     left: 0%;
 }
 
