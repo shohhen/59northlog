@@ -1,15 +1,3 @@
 {
-    "redirects": [
-      {
-        "source": "/(.*)",
-        "destination": "https://www.59northlog.com/$1",
-        "has": [
-          {
-            "type": "host",
-            "value": "59northlog.com"
-          }
-        ],
-        "permanent": true
-      }
-    ]
+    "redirects": []
   }
